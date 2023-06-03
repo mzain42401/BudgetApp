@@ -1,0 +1,240 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+/* side bar inputs */
+.inputs{
+    height: 20px;
+    width: 150px;
+    outline: none;
+    border: 1px solid black;
+    background-color: transparent;
+    padding: 5px ;
+    border-radius: 5px;
+    font-size: 14px;
+margin-top: 3px;
+    }
+
+    /* side bar setBudgetBtn and setBudgetBtn */
+
+    .setBudgetBtn,.setExpensesBtn{
+        padding: 8px 20px;
+        margin-top: 15px;
+    border-radius: 5px;
+    border:none;
+    border: 2px solid #007FFF ;
+
+    background-color: #007FFF;
+    color: #fff;
+}
+.setBudgetBtn:hover,.setExpensesBtn:hover{
+         border: 2px solid #007FFF ;
+        background-color:transparent;
+        cursor: pointer;
+        color: black;
+    }
+
+
+
+
+
+/* side bar  mainContainer  */
+
+.mainContainer{
+position: absolute;
+position: fixed;
+display: flex;
+flex-direction: column;
+top:0%;
+right: 1%;;
+}
+
+
+/* side bar set Budget Container */
+.setBudgetContainer{
+    width: max-content;
+    padding: 20px  80px 20px 40px;
+    border-radius: 6px;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px gray;
+    margin-top: 5px;
+}
+.setBudgetContainer h4{
+    margin-bottom: 10px;
+}
+
+
+ 
+
+
+/* side bar set Expenses Container */
+
+.setExpensesContainer{
+    margin-top: 8px;
+    width: max-content;
+    padding: 20px  80px 20px 40px;
+
+    border-radius: 6px;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px gray;
+  
+}
+.lables{
+    margin-top: 15px;
+}
+/* side bar Reset Container  */
+
+.resetDiv{
+    width: max-content;
+    padding:  20px 70px;
+    margin-top: 10px;
+height: max-content;
+    border-radius: 6px;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* side bar Reset Btn  */
+.resetBtn{
+    padding: 8px 27px;
+    border-radius: 5px;
+    font-size: 22px;
+    border:none;
+    background-color: #007FFF;
+    border: 2px solid #007FFF ;
+
+    color: #fff;
+
+}
+ .resetBtn:hover{
+    border: 2px solid #007FFF ;
+        background-color:transparent;
+        cursor: pointer;
+        color: black;
+}
+
+
+
+ /* Total Budget, Total Expenses and Balance container at the top of page  */
+
+
+.mainRow{
+    width: 62vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-left: 59px;
+    background-color: #0039a6;
+    padding: 25px;
+    border-radius: 5px;
+    box-shadow: 0px 05px 10px gray;
+    font-size: 22px;
+    color: #fff;
+    position: fixed;
+    z-index: 999;
+}
+
+/*  unorder list  */
+
+.espensesContainer{
+    height: max-content;
+    width: 64vw;
+    margin-left: 70px;
+position: absolute;
+top: 20%;
+list-style: none;
+display: none;
+
+}
+
+/* daynamice  li create from javascript */
+
+.MyExpenses{
+    position: relative;
+    height: 70px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+    background-color: #fff;
+    color: #000;
+    box-shadow: 0px 0px 10px gray;
+    border-radius: 5px;
+}
+
+/* starIcon */
+
+.starIcon{
+    position: absolute;
+    left: 1.5%;
+    color: #007FFF;
+    height:30px;
+    width: 30px;
+    font-size: 20px;
+    /* background-color: red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.category,.amount,.date{
+    font-size: 20px;
+}
+.category{
+    position: absolute;
+    left: 7%;
+    width: 330px;
+    text-transform: capitalize;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.amount{
+    position: absolute;
+    left: 49%;
+    width: 155px;
+    display: flex;
+    justify-content: center;
+
+}
+.date{
+    position: absolute;
+    right: 10.5%;
+    width: 110px;
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    
+}
+.editBtn{
+    position: absolute;
+    right: 5.5%;
+    font-size: 23px;
+
+}
+.delBtn{
+    position: absolute;
+    right: 1%;
+    font-size: 30px;
+
+}
+.editBtn,.delBtn{
+    color: #007FFF;
+    height:35px;
+    width: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    
+
+}
+.editBtn:hover,.delBtn:hover{
+    cursor: pointer;
+    color: #0039a6;
+    
+}
+

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget and Expenses</title>
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- css file link -->
+    <link rel="stylesheet" href="./style.css">
+    <!-- javascript file link -->
+    <script src="./app.js" defer></script>
+</head>
+
+<body>
+
+    <!-- Total Budget, Total Expenses and Balance container at the top of page -->
+
+    <div class="mainRow">
+        <div >Total Budget : <span id="BudgetAmount"></span></div>
+        <div>Total Expenses : <span id="totalExpensesAmount"></span></div>
+        <div> Balance : <span id="Balance"></span></div>
+    </div>
+ 
+    <!-- for create a  daynamice Expenses Div  from javascript -->
+
+    <ul class="espensesContainer"></ul>
+
+<!-- side bar -->
+    <div class="mainContainer">
+        <div class="setBudgetContainer">
+            <div>
+                <h4 >SET BUDGET</h4>
+            </div>
+            <div><input type="number" class="inputs" id="userBudget" placeholder="Enter Total Amount"></div>
+            <div><button class="setBudgetBtn" onclick="setBudgetFun()">Set Budget</button></div>
+        </div>
+        <div class="setExpensesContainer">
+            <div>
+                <h4>ADD EXPENSES</h4>
+            </div>
+            <div class="lables"><label  for="category">Category</label></div>
+            <div><input class="inputs" type="text" placeholder="Category" id="category"></div>
+            <div class="lables"><label     for="eAmount">Amount</label></div>
+            <div><input  type="number" class="inputs" id="expensesAmount"  placeholder="$ amount "></div>
+            <div class="lables"><label     for="date">Date</label></div>
+            <div> <input required class="inputs" id="expensesDate" type="date"></div>
+            <div><button class="setExpensesBtn" onclick="addEpenses()">Add Expenses</button></div>
+        </div>
+        <div class="resetDiv">
+            <div><button class="resetBtn" onclick="reset()">Reset All</button></div>
+        </div>
+    </div>
+</body>
+
+</html>
