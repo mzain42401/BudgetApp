@@ -1,3 +1,5 @@
+const setBudgetContainer = document.querySelector(".setBudgetContainer")
+const setExpensesContainer = document.querySelector(".setExpensesContainer")
 var BudgetAmount = document.getElementById("BudgetAmount")
 BudgetAmount.innerHTML = "00"
 var totalExpensesAmount = document.getElementById("totalExpensesAmount")
@@ -5,9 +7,35 @@ totalExpensesAmount.innerHTML = "00"
 var Balance = document.getElementById("Balance")
 Balance.innerHTML = "00"
 
+window.onresize = resize;
 
+function resize()
+{
+    if (window.innerWidth >1072) {
+        setBudgetContainer.style.display='block';
+        setExpensesContainer.style.display='block';
 
+        
+    }
+   else if (window.innerWidth <1072) {
+        setBudgetContainer.style.display='none';
+        setExpensesContainer.style.display='none';
 
+        
+    }
+ 
+}
+
+// if (window.innerWidth<947) {
+//     const mainContainer = document.querySelector(".mainContainer")
+        
+//     mainContainer.style.display = 'none'
+// }
+// else if (window.innerWidth>947) {
+//     const mainContainer = document.querySelector(".mainContainer")
+//         mainContainer.style.display="flex"
+//     mainContainer.style.right = '1%'
+// }
 //-----set Budget Function
 
 function setBudgetFun() {
@@ -17,15 +45,41 @@ function setBudgetFun() {
         BudgetAmount.innerHTML = Number(BudgetAmount.innerHTML) + Number(userBudget.value)
         Balance.innerHTML = BudgetAmount.innerText - totalExpensesAmount.innerText
         userBudget.value = ""
+        console.log(window.innerWidth);
+        if (window.innerWidth<1072) {
+            
+            setBudgetContainer.style.display = 'none'
+        }
     }
     else {
         alert(" Please Enter Your Budget")
     }
+
+
 }
 
 
+function displaySetbudget() {
+    setBudgetContainer.style.display = 'block'
+    setExpensesContainer.style.display='none'
+}
+
+function displayAddExpenses() {
+    setBudgetContainer.style.display = 'none'
+    setExpensesContainer.style.display='block'
+   
+
+}
 
 
+function delsetBudgetContainer (){
+    setBudgetContainer.style.display = "none"
+
+}
+function delsetExpensesContainer (){
+    setExpensesContainer.style.display = "none"
+
+}
 // array in which we push multiple object 
 
 var arry = []
@@ -33,13 +87,13 @@ var arry = []
 // ----- Add Epenses Function
 
 function addEpenses() {
-    var categoryValue = document.getElementById("category")
+     var categoryValue = document.getElementById("category")
     var expensesAmountValue = document.getElementById("expensesAmount")
-    var expensesDateValue = document.getElementById("expensesDate")
+     var expensesDateValue = document.getElementById("expensesDate")
 
     if (categoryValue.value && expensesAmountValue.value && expensesDateValue.value) {
 
-// ---------constructor
+        // ---------constructor
         function Obj(categoryValue, expensesAmountValue, expensesDateValue) {
 
             this.category = categoryValue;
@@ -48,15 +102,16 @@ function addEpenses() {
 
         }
 
-    
+
         var callObj = new Obj(categoryValue.value, expensesAmountValue.value, expensesDateValue.value)
+        console.log(callObj);
 
 
-//-------- push object in arry 
+        //-------- push object in arry 
 
         arry.push(callObj)
 
-// --------edit method in prototype
+        // --------edit method in prototype
         Obj.prototype.edit = function () {
             var userCategory = prompt("Enter Your Category", callObj.category)
             var userExpenseAmount = prompt("Enter Your Amount", callObj.amount)
@@ -98,7 +153,7 @@ function addEpenses() {
         }
 
 
-// --------delete method in prototype
+        // --------delete method in prototype
 
         Obj.prototype.delete = function () {
 
@@ -118,10 +173,10 @@ function addEpenses() {
             console.log(arry);
         }
 
-        
+
 
         var espensesContainer = document.querySelector(".espensesContainer")
-        espensesContainer.style.display="block";
+        espensesContainer.style.display = "block";
 
 
 
@@ -130,18 +185,22 @@ function addEpenses() {
         espensesContainer.appendChild(MyExpenses)
 
 
+        var MyExpensesCenterDiv = document.createElement("div")
+        MyExpensesCenterDiv.classList.add("MyExpensesCenterDiv")
+        MyExpenses.appendChild(MyExpensesCenterDiv)
+
         var starIconDiv = document.createElement("div")
         starIconDiv.classList.add('fa', 'fa-star')
         starIconDiv.classList.add("starIcon")
-        MyExpenses.appendChild(starIconDiv)
+        MyExpensesCenterDiv.appendChild(starIconDiv)
 
 
 
         var categoryDiv = document.createElement("div")
         categoryDiv.classList.add("category")
-        var textnodeCategory = document.createTextNode(`${callObj.category}`);
+        var textnodeCategory = document.createTextNode(` ${callObj.category}`);
         categoryDiv.appendChild(textnodeCategory);
-        MyExpenses.appendChild(categoryDiv)
+        MyExpensesCenterDiv.appendChild(categoryDiv)
 
 
 
@@ -150,7 +209,7 @@ function addEpenses() {
         expenseamountDiv.classList.add("amount")
         var textnodeAmount = document.createTextNode(`$ ${callObj.amount}`);
         expenseamountDiv.appendChild(textnodeAmount);
-        MyExpenses.appendChild(expenseamountDiv)
+        MyExpensesCenterDiv.appendChild(expenseamountDiv)
 
 
 
@@ -158,22 +217,26 @@ function addEpenses() {
         dateDiv.classList.add("date");
         var textnodeDate = document.createTextNode(`${callObj.date}`);
         dateDiv.appendChild(textnodeDate);
-        MyExpenses.appendChild(dateDiv);
+        MyExpensesCenterDiv.appendChild(dateDiv);
 
 
+        var btnDiv = document.createElement("div")
+        btnDiv.classList.add("btnDiv")
+        MyExpensesCenterDiv.appendChild(btnDiv)
 
         var editBtn = document.createElement("div")
         editBtn.addEventListener('click', callObj.edit);
         editBtn.classList.add("editBtn")
         editBtn.classList.add('fa', 'fa-pen')
-        MyExpenses.appendChild(editBtn)
+        btnDiv.appendChild(editBtn)
 
 
         var delBtn = document.createElement("div")
         delBtn.addEventListener('click', callObj.delete);
         delBtn.classList.add("delBtn")
-        delBtn.classList.add('fa', 'fa-xmark')
-        MyExpenses.appendChild(delBtn)
+        delBtn.classList.add('fa', 'fa-trash')
+        // <i class="fa-solid "></i>
+        btnDiv.appendChild(delBtn)
 
 
         var sum = 0
@@ -198,6 +261,11 @@ function addEpenses() {
 
     else {
         alert("Please Enter your Category, Amount and Date.")
+    }
+    const setExpensesContainer=document.querySelector(".setExpensesContainer")
+    if (window.innerWidth<1072) {
+            
+        setExpensesContainer.style.display='none'
     }
 
 
@@ -226,8 +294,8 @@ function reset() {
     totalExpensesAmount.innerHTML = "00"
     Balance.innerHTML = "00"
     var espensesContainer = document.querySelector(".espensesContainer")
-    if(espensesContainer){
-        
+    if (espensesContainer) {
+
         espensesContainer.remove()
         arry.length = 0
     }

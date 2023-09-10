@@ -18,11 +18,20 @@
     <!-- Total Budget, Total Expenses and Balance container at the top of page -->
 
     <div class="mainRow">
-        <div >Total Budget : <span id="BudgetAmount"></span></div>
-        <div>Total Expenses : <span id="totalExpensesAmount"></span></div>
-        <div> Balance : <span id="Balance"></span></div>
+        <div><h1>Budget App</h1></div>
+        <div class="textMainRow">
+        <div >Total Budget  <span id="BudgetAmount"></span></div>
+        <div>Total Expenses  <span id="totalExpensesAmount"></span></div>
+        <div> Balance  <span id="Balance"></span></div>
+    </div>
     </div>
  
+    <div class="resposiveBtn">
+        <button onclick="displaySetbudget()">SET BUDGET</button>
+        <button onclick="displayAddExpenses()">ADD EXPENSES</button>
+        <button onclick="reset()">DELETE ALL</button>
+
+    </div>
     <!-- for create a  daynamice Expenses Div  from javascript -->
 
     <ul class="espensesContainer"></ul>
@@ -30,6 +39,7 @@
 <!-- side bar -->
     <div class="mainContainer">
         <div class="setBudgetContainer">
+            <div class="cross"><i onclick="delsetBudgetContainer()" class="fa-solid fa-xmark"></i></div>
             <div>
                 <h4 >SET BUDGET</h4>
             </div>
@@ -37,6 +47,8 @@
             <div><button class="setBudgetBtn" onclick="setBudgetFun()">Set Budget</button></div>
         </div>
         <div class="setExpensesContainer">
+            <div class="cross"><i onclick="delsetExpensesContainer()" class="fa-solid fa-xmark"></i></div>
+
             <div>
                 <h4>ADD EXPENSES</h4>
             </div>
