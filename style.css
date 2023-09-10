@@ -273,7 +273,7 @@ display: none;
 .date{
     position: absolute;
     
-    top: -5%;
+    top: -9px;
     left: 50%;
     transform: translate(-50%);
     /* margin-bottom: 20px; */
@@ -326,7 +326,7 @@ border-radius: 6px;
 
 .resposiveBtn{
     position: absolute;
-    top: 20%;
+    top: 30%;
     padding: 05px 5px;
     width: 90%;
     display: flex;
@@ -391,9 +391,10 @@ cursor: pointer;
         font-size: 16px;
         text-align: center;
         margin: 0px 10px;
+        border-right: 2px solid #007FFF;
      }  
      .espensesContainer{
-top: 35%;
+top: 30%;
 
      }
      .category{
