@@ -195,7 +195,7 @@ display: none;
     left: 50%;
     transform: translate(-50%);
     /* height: 70px; */
-    width: 70%;
+    width: 50%;
     display: flex;
     align-items: center;
     /* padding-left: 50px; */
@@ -251,7 +251,8 @@ display: none;
     color: gray;
     color: gray;
     position: absolute;
-    top: -100%;
+ ;
+    top: -15px;
 
     font-size: 14px;
     left: 50%;
@@ -267,7 +268,7 @@ display: none;
     content: 'Your Expense  ';
     color: gray;
     position: absolute;
-    top: -100%;
+    top: -15px;
     left: 50%;
     transform: translate(-50%);
     font-size: 14px;
@@ -404,6 +405,9 @@ top: 35%;
      .amount{
         font-size: 18px;
 
+     }
+     .MyExpenses{
+        width: 70%;
      }
      
 }
