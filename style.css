@@ -344,7 +344,7 @@ cursor: pointer;
 
 @media (max-width: 1072px){
     .mainContainer{
-        top: 23%;
+        top: 18%;
     }
     .setBudgetContainer{
         display: none;

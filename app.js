@@ -7,24 +7,24 @@ totalExpensesAmount.innerHTML = "00"
 var Balance = document.getElementById("Balance")
 Balance.innerHTML = "00"
 
-window.onresize = resize;
+// window.onresize = resize;
 
-function resize()
-{
-    if (window.innerWidth >1072) {
-        setBudgetContainer.style.display='block';
-        setExpensesContainer.style.display='block';
-
-        
-    }
-   else if (window.innerWidth <1072) {
-        setBudgetContainer.style.display='none';
-        setExpensesContainer.style.display='none';
+// function resize()
+// {
+//     if (window.innerWidth >1072) {
+//         setBudgetContainer.style.display='block';
+//         setExpensesContainer.style.display='block';
 
         
-    }
+//     }
+//    else if (window.innerWidth <1072) {
+//         setBudgetContainer.style.display='none';
+//         setExpensesContainer.style.display='none';
+
+        
+//     }
  
-}
+// }
 
 // if (window.innerWidth<947) {
 //     const mainContainer = document.querySelector(".mainContainer")
