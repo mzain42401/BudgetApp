@@ -314,7 +314,7 @@ padding-right: 5px;
 
 .resposiveBtn{
     position: absolute;
-    top: 18%;
+    top: 20%;
     padding: 05px 5px;
     width: 90%;
     display: flex;
@@ -368,9 +368,13 @@ cursor: pointer;
         transform: translate(-50%);
 
     }
- .textMainRow>div{
-    font-size: 15px;
- }   
+  
+}
+
+@media (max-width: 500px){
+    .tBudget,.tExpense,.tbalnce{
+        font-size: 16px;
+     }  
 }
 
 
