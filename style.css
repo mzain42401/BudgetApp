@@ -149,10 +149,7 @@ height: max-content;
     color: #fff;
 }
 
-.mainRow>div{
-    /* background-color: aqua; */
-    /* text-align: center; */
-}
+
 .setBudgetContainer{
     position: relative;
     display: block;;
@@ -195,7 +192,7 @@ display: none;
     left: 50%;
     transform: translate(-50%);
     /* height: 70px; */
-    width: 50%;
+    width: 70%;
     display: flex;
     align-items: center;
     /* padding-left: 50px; */
@@ -244,14 +241,13 @@ display: none;
    position: relative;
    text-align: center;
 
-
 }
 .category::before{
     content: 'Your Category ';
     color: gray;
-    color: gray;
+   
     position: absolute;
- ;
+ 
     top: -15px;
 
     font-size: 14px;
@@ -394,6 +390,7 @@ cursor: pointer;
     .tBudget,.tExpense,.tbalnce{
         font-size: 16px;
         text-align: center;
+        margin: 0px 10px;
      }  
      .espensesContainer{
 top: 35%;
@@ -406,9 +403,7 @@ top: 35%;
         font-size: 18px;
 
      }
-     .MyExpenses{
-        width: 70%;
-     }
+    
      
 }
 
