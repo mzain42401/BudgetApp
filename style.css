@@ -233,30 +233,45 @@ display: none;
     display: flex;
     justify-content: center;
     align-items: center;
+    display: none;
 }
 
 
 .category{
    font-size: 20px;
     text-transform: capitalize;
-   margin: 10px 0px;
-   padding-left: 10px;
+   margin: 30px 0px;
+   position: relative;
+   text-align: center;
 
 
 }
 .category::before{
-    content: 'Your Category :';
+    content: 'Your Category ';
     color: gray;
+    color: gray;
+    position: absolute;
+    top: -100%;
+
+    font-size: 14px;
+    left: 50%;
+    transform: translate(-50%);
 }
 .amount{
-    margin: 10px 0px 10px 0px;
-    padding-left: 10px;
-   
+    margin: 30px  0px;
+   position: relative;
+   text-align: center;
 
 }
 .amount::before{
-    content: 'Your Expense : ';
+    content: 'Your Expense  ';
     color: gray;
+    position: absolute;
+    top: -100%;
+    left: 50%;
+    transform: translate(-50%);
+    font-size: 14px;
+
 }
 .date{
     position: absolute;
